@@ -1,4 +1,5 @@
 import cec
+import time
 
 class CecController:
     """
@@ -50,10 +51,11 @@ class CecController:
         if volume > 0:
             for _ in range(volume):
                 cec.volume_up()
+                time.sleep(1)
         elif volume < 0:
             for _ in range(-volume):
                 cec.volume_down()
-
+                time.sleep(1)
 
 if __name__ == '__main__':
     cec_controller = CecController()
